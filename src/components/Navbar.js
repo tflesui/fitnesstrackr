@@ -7,12 +7,13 @@ import {
   Nav,
   NavItem,
   NavLink,
-  UncontrolledDropdown,
-  DropdownToggle,
-  DropdownMenu,
-  DropdownItem,
+  // UncontrolledDropdown,
+  // DropdownToggle,
+  // DropdownMenu,
+  // DropdownItem,
   NavbarText
 } from 'reactstrap';
+
 
 const Example = (props) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -21,34 +22,23 @@ const Example = (props) => {
 
   return (
     <div>
-      <Navbar color="warning" light expand="md">
+      <Navbar color="primary" className="px-3" light expand="md">
         <NavbarBrand href="/">FitnessTrackr</NavbarBrand>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
-          <Nav className="mr-auto" navbar>
+          <Nav className="mx-auto" navbar>
             <NavItem>
-              <NavLink href="/components/">Components</NavLink>
+              <NavLink href="/activities/">Activities</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href="https://github.com/reactstrap/reactstrap">GitHub</NavLink>
+              <NavLink href="/routines/">Routines</NavLink>
             </NavItem>
-            <UncontrolledDropdown nav inNavbar>
-              <DropdownToggle nav caret>
-                Options
-              </DropdownToggle>
-              <DropdownMenu right>
-                <DropdownItem>
-                  Option 1
-                </DropdownItem>
-                <DropdownItem>
-                  Option 2
-                </DropdownItem>
-                <DropdownItem divider />
-                <DropdownItem>
-                  Reset
-                </DropdownItem>
-              </DropdownMenu>
-            </UncontrolledDropdown>
+            <NavItem>
+              <NavLink href="/register/">Sign Up</NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink href="/login/">Login</NavLink>
+            </NavItem>
           </Nav>
           <NavbarText>Track More</NavbarText>
         </Collapse>
