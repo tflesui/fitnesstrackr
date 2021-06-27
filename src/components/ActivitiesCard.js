@@ -7,7 +7,6 @@ import {
 const ActivitiesCard = (props) => {
   // const { id, name, description } = props;
 
-  console.log(props);
 
   return (
     <div>

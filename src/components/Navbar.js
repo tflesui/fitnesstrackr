@@ -41,7 +41,7 @@ const Example = (props) => {
               <NavLink tag={Link} to="/login">Login</NavLink>
             </NavItem>
           </Nav>
-          <NavbarText>Track More</NavbarText>
+          <NavbarText>Fitness For All</NavbarText>
         </Collapse>
       </Navbar>
     </div>
