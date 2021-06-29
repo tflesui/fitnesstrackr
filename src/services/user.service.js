@@ -1,29 +1,29 @@
-// import axios from "axios";
-// import authHeader from "./auth-header";
+import axios from "axios";
+import authHeader from "./auth-header";
 
-// const API_URL = "https://gentle-woodland-79828.herokuapp.com/api/";
+const API_URL = "https://gentle-woodland-79828.herokuapp.com/api/";
 
-// // const getPublicContent = () => {
-// //   return axios.get(API_URL + "all");
-// // };
-
-// // Add other routes which require authorization here
-
-// const getUser = () => {
-//   return axios.get(API_URL + "users/me", { headers: authHeader() });
+// const getPublicContent = () => {
+//   return axios.get(API_URL + "all");
 // };
 
-// const getModeratorBoard = () => {
-//   return axios.get(API_URL + "mod", { headers: authHeader() });
-// };
+// Add other routes which require authorization here
 
-// const getAdminBoard = () => {
-//   return axios.get(API_URL + "admin", { headers: authHeader() });
-// };
+const getUser = () => {
+  return axios.get(API_URL + "users/me", { headers: authHeader() });
+};
 
-// export default {
-// //   getPublicContent,
-//   getUser,
-//   getModeratorBoard,
-//   getAdminBoard,
-// };
+const getModeratorBoard = () => {
+  return axios.get(API_URL + "mod", { headers: authHeader() });
+};
+
+const getAdminBoard = () => {
+  return axios.get(API_URL + "admin", { headers: authHeader() });
+};
+
+export default {
+//   getPublicContent,
+  getUser,
+  getModeratorBoard,
+  getAdminBoard,
+};
