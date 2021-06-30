@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from "react-router-dom";
+import AuthService from '../services/auth.service';
+
 import {
   Collapse,
   Navbar,
@@ -33,13 +35,26 @@ const Example = (props) => {
             </NavItem>
             <NavItem>
               <NavLink tag={Link} to="/routines">Routines</NavLink>
-            </NavItem>
-            <NavItem>
-              <NavLink tag={Link} to="/register">Sign Up</NavLink>
-            </NavItem>
-            <NavItem>
-              <NavLink tag={Link} to="/login">Login</NavLink>
-            </NavItem>
+              </NavItem>            
+              {
+                localStorage.getItem('user') === null && 
+                  <>
+                    <NavItem>
+                      <NavLink tag={Link} to="/register">Sign Up</NavLink>
+                    </NavItem>
+                    <NavItem>
+                      <NavLink tag={Link} to="/login">Login</NavLink>
+                    </NavItem>
+                  </>
+              }             
+              {
+                AuthService.getCurrentUser() !== null && 
+                  <>
+                    <NavItem>
+                      <NavLink tag={Link} to="/" onClick={AuthService.logout}>Logout</NavLink>
+                    </NavItem>
+                  </>
+              }
           </Nav>
           <NavbarText>Fitness For All</NavbarText>
         </Collapse>

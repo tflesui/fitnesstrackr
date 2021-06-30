@@ -13,6 +13,7 @@ const Profile = () => {
            Profile
         </h1>
         <h3>Welcome {username.toUpperCase()}</h3>
+        <p className="lead"> Under Construction</p>
       </Jumbotron>
     </Container>
   );
