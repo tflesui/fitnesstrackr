@@ -1,4 +1,4 @@
-import Navbar from './components/Navbar'
+import Header from './components/Navbar'
 import Main from './components/Main';
 import Activities from './components/Activities';
 import Routines from './components/Routines';
@@ -13,7 +13,7 @@ const App = () => {
   return (
       <div className="App">
         <Router>
-          <Navbar />
+          <Header />
           <Switch>
             <Route path='/' exact component={Main} />
             <Route path='/activities' component={Activities} />

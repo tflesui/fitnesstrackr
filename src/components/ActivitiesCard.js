@@ -15,7 +15,7 @@ const ActivitiesCard = (props) => {
           <CardTitle tag="h5" className="text-muted">{`Activity ${props.activity.id}`}</CardTitle>
           <CardSubtitle tag="h6" className="mb-2 text-muted">{props.activity.name}</CardSubtitle>
           <CardText className="text-muted">{props.activity.description}</CardText>
-          <Button className="btn-primary">Add to Routine</Button>
+          <Button outline className="btn-primary">Add to Routine</Button>
         </CardBody>
       </Card>
     </div>

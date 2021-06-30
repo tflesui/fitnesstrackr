@@ -18,10 +18,11 @@ import {
 } from 'reactstrap';
 
 
-const Example = (props) => {
+const Header = (props) => {
   const [isOpen, setIsOpen] = useState(false);
-
+  const [user, setUser] = useState();
   const toggle = () => setIsOpen(!isOpen);
+
 
   return (
     <div>
@@ -35,26 +36,16 @@ const Example = (props) => {
             </NavItem>
             <NavItem>
               <NavLink tag={Link} to="/routines">Routines</NavLink>
-              </NavItem>            
-              {
-                localStorage.getItem('user') === null && 
-                  <>
+              </NavItem>    
                     <NavItem>
                       <NavLink tag={Link} to="/register">Sign Up</NavLink>
                     </NavItem>
                     <NavItem>
                       <NavLink tag={Link} to="/login">Login</NavLink>
                     </NavItem>
-                  </>
-              }             
-              {
-                AuthService.getCurrentUser() !== null && 
-                  <>
                     <NavItem>
                       <NavLink tag={Link} to="/" onClick={AuthService.logout}>Logout</NavLink>
                     </NavItem>
-                  </>
-              }
           </Nav>
           <NavbarText>Fitness For All</NavbarText>
         </Collapse>
@@ -63,4 +54,4 @@ const Example = (props) => {
   );
 }
 
-export default Example;
+export default Header;
